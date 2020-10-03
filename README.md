@@ -7,6 +7,7 @@ When you are done, delete everything else on this page. It is only here for refe
 Note the following Markdown formatting:
 
 # Header 1
+
 ## Header 2
 ### Header 3
 #### Header 4
