@@ -22,45 +22,58 @@ fun()
 
 import random
 
-chances = 9
-guesses = []
-win = 0
-repeat = 0
+# these are variables
+chances=9
+guesses=[]
+win=0
+guess=''
+repeat=0
 
+# this is the list of possibilities that you would have to find
 fruit = ["kiwi","pineapple","mango","strawberries","apples","bananas","pears","watermelon","grapes", "oranges"]
 x = random.randint(0, len(fruit)-1)
-secret_name=fruit[x]
-
+secretname=fruit[x]
+print(secretname)
+# this prints the dashes for the number of letter in secretname everytime you guess, and if you get letters correct, it replaces the dash with a letter
 progress = ""
-for letter in secret_name:
-  progress = " _ " + progress
-  print(" _ ")
-
+for letter in secretname:
+  progress = "_ " + progress
+  print("_ ")
+#this tells you to start guessing
 while win==0:
-    letter_in_person =input("Okay, now please guess the letters of the name of the person you have "+str(chances)+" chances ")
-    if letter_in_person in guesses:
-        print("you already guessed this")
-    else:
-      repeat = 0
+  letter_in_fruit =input("Okay, now please guess the letters of the name of the fruit you have "+str(chances)+" chances ")
+  if letter_in_fruit in guesses:
+    print("you already guessed this")
+
+  else:
+    repeat = 0
 # this says that if a letter you guess is used multiple times in secretname, your guess will count for all of the times it is in the secretname
-    for x in range(len(secret_name)):
-        if secret_name[x] == letter_in_person:
-            repeat+=1
-            #part to go through word and see if letter is there more than once
-    # this is if your guess is one of the letters in the secretname, then it will print the letter
-    if letter_in_person in secret_name:
-        print(letter_in_person)
+  for x in range(len(secretname)):
+    if secretname[x] == letter_in_fruit:
+      repeat+=1
+      progress = progress[:x*2] + secretname[x] + progress[x*2 + 1:]
+
+# this is if your guess is one of the letters in the secretname, then it will print the letter
+  if letter_in_fruit in secretname:
+    print(letter_in_fruit)
 
 # else you lose a chance if it isn't one of the letters
-    else:
-        chances -= 1
-        print("sorry, that is not one of the letters in the name. you have ",chances," more chances. ")
-        print(progress)
+  else:
+    chances -= 1
+    print("sorry, that is not one of the letters in the name. you have "+str(chances)+" more chances. ")
 
+  print(progress)
 
+# this puts your correct guess in a list
+for x in range(repeat):
+  guesses.append(letter_in_fruit)
 
-
-
-
-
-
+# if the amount of correct guess is equal to the letters in the secretname, then win=1 meaning you won
+if len(secretname)==len(guesses):
+  win=1
+  print("great job, you got it!")
+# you lose if you run out of chances and then win=1
+if chances==0:
+  win=1
+  print('sorry, you ran out of chances. you lose')
+  print("this was the name " +secretname+ ".")
