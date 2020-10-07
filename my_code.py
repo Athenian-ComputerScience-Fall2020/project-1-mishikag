@@ -3,8 +3,6 @@
 
 #intro
 
-intro=input("hi. what is your name? ")
-print("hello " + intro +". lets play the game!")
 #incase user makes a typo, only lets them input food, animals, sports
 def fun():
   category=input("please select your category. the categories are: fruit, vegetables, and drinks. ")
@@ -18,6 +16,10 @@ def fun():
     print("Ok you have selected the mode food. You have 9 chances to be wrong")
   elif category=="drinks":
     print("Ok you have selected the mode sports. You have 9 chances to be wrong")
+
+intro=input("hi. what is your name? ")
+print("hello " + intro +". lets play the game!")
+
 fun()
 
 import random
@@ -34,6 +36,7 @@ fruit = ["kiwi","pineapple","mango","strawberries","apples","bananas","pears","w
 x = random.randint(0, len(fruit)-1)
 secretname=fruit[x]
 print(secretname)
+
 # this prints the dashes for the number of letter in secretname everytime you guess, and if you get letters correct, it replaces the dash with a letter
 progress = ""
 for letter in secretname:
@@ -69,11 +72,11 @@ for x in range(repeat):
   guesses.append(letter_in_fruit)
 
 # if the amount of correct guess is equal to the letters in the secretname, then win=1 meaning you won
-if len(secretname)==len(guesses):
-  win=1
-  print("great job, you got it!")
+  if len(secretname)==len(guesses):
+    win=1
+    print("great job, you got it!")
 # you lose if you run out of chances and then win=1
-if chances==0:
-  win=1
-  print('sorry, you ran out of chances. you lose')
-  print("this was the name " +secretname+ ".")
+  if chances==0:
+    win=1
+    print('sorry, you ran out of chances. you lose')
+    print("this was the name " +secretname+ ".")
