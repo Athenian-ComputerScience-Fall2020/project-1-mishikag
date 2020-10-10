@@ -16,13 +16,13 @@ try:
       print("Okay, you have selected the mode fruit. you have 9 chances to be wrong")
     elif category=="vegetables":
       print("Ok you have selected the mode vegetables. You have 9 chances to be wrong")
-
+  fun()
 #prints that you have to enter the correct input and then runs the function again
+
 except (category!="fruit" or category!="vegetables"):
-  print("sorry, please enter either animals, food, or sports ")
+  print("sorry, please enter either fruit or vegetables ")
   fun()
 
-fun()
 if category =="fruit":
   import random
 
@@ -46,9 +46,6 @@ if category =="fruit":
   #this tells you to start guessing
   while secretname!=guesses:
     letter_in_fruit =input("Okay, now please guess the letters of the name of the fruit you have "+str(chances)+" chances ")
-
-    if letter_in_fruit in guesses:
-      print("you already guessed this")
 
   # this says that if a letter you guess is used multiple times in secretname, your guess will count for all of the times it is in the secretname
     for x in range(len(secretname)):

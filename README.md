@@ -1,4 +1,4 @@
-# Project 1
+# Project 1 Description
 
 ## Letter Guessing Game
 This is a guessing game that asks the user to guess by letter to reveal the secret word
@@ -16,6 +16,13 @@ This is a guessing game that asks the user to guess by letter to reveal the secr
 * The code stores the user's guesses in a list and if the length of that list is equal to the length of thr secret word it will break out of the loop and you win
 * If the user runs out of guesses it will break out of the loop and tell the user they ran out if guesses
 
+
+
+
+
+
+
+
 *Single asterisks make italics*
 
 **Double asterisks make text bold**
@@ -31,6 +38,5 @@ multiple
 lines
 like this
 ```
-
 Use the preview tab at the top to see how it looks. You can edit directly in GitHub or in Gitpod. Be careful not to edit in GitHub while Gitpod is open or you may have version conflicts.
 
