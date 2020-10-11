@@ -38,7 +38,6 @@ if category ==1:
   fruit = ["kiwi","pineapple","mango","strawberries","apples","bananas","pears","watermelon","grapes", "oranges"]
   x = random.randint(0, len(fruit)-1) #this just means that x is a random element from the list from first to last
   secretname=fruit[x]
-  print(secretname)
 
   # this prints the dashes for the number of letter in secretname everytime you guess, and if you get letters correct, it replaces the dash with a letter
   progress = ""
@@ -48,8 +47,6 @@ if category ==1:
 
   #this tells you to start guessing
   while secretname!=guesses:
-    print(secretname) #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    print(guesses)
 
     letter_in_fruit =input("Okay, now please guess the letters of the name of the fruit you have "+str(chances)+" chances ")
 
@@ -68,10 +65,6 @@ if category ==1:
       print("sorry, that is not one of the letters in the name. you have "+str(chances)+" more chances. ")
 
     print(progress)
-
-  # this puts your correct guess in a list
-   # if letter_in_fruit in secretname:
-    #  guesses.append(letter_in_fruit)
 
     if len(secretname)==len(guesses):
       break
@@ -100,7 +93,6 @@ if category ==2:
   vegetables = ["broccoli","pepper","lettuce","carrot","garlic","potato","cauliflower","cucumber","spinach", "zucchini"]
   x = random.randint(0, len(vegetables)-1) #this just means that x is a random element from the list from first to last
   secretname=vegetables[x]
-  print(secretname)
 
   # this prints the dashes for the number of letter in secretname everytime you guess, and if you get letters correct, it replaces the dash with a letter
   progress = ""
@@ -110,8 +102,6 @@ if category ==2:
 
   #this tells you to start guessing
   while secretname!=guesses:
-    print(secretname) #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    print(guesses)
 
     letter_in_vegetables =input("Okay, now please guess the letters of the name of the fruit you have "+str(chances)+" chances ")
 
@@ -131,20 +121,16 @@ if category ==2:
 
     print(progress)
 
-  # this puts your correct guess in a list
-   # if letter_in_fruit in secretname:
-    #  guesses.append(letter_in_fruit)
-
     if len(secretname)==len(guesses):
       break
     if chances==0:
       break
 
   # if the amount of correct guess is equal to the letters in the secretname then you win
-if len(secretname)==len(guesses):
-  print("great job, you got it!")
+  if len(secretname)==len(guesses):
+    print("great job, you got it!")
 
   # you lose if you run out of chances
-if chances==0:
-  print('sorry, you ran out of chances. you lose')
-  print("the word was " +secretname+ ".")
+  if chances==0:
+    print('sorry, you ran out of chances. you lose')
+    print("the word was " +secretname+ ".")
