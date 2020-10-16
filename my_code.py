@@ -1,9 +1,7 @@
 # Collaborators (including web sites where you got help: (enter none if you didn't need help)
 #  shanie lee
-#code doesn't stop when you win and code doesn't do anything when you enter a letter you already guessed
 
 #introduction to the game
-
 import random
 
 def introduction():
@@ -34,7 +32,7 @@ if category ==1:
 
   introduction()
 
-  # this is the list of possibilities that you would have to find
+  #this is the list of possibilities that you would have to find
   fruit = ["kiwi","pineapple","mango","strawberries","apples","bananas","pears","watermelon","grapes", "oranges"]
   x = random.randint(0, len(fruit)-1) #this just means that x is a random element from the list from first to last
   secretname=fruit[x]
@@ -59,7 +57,8 @@ if category ==1:
   # this is if your guess is one of the letters in the secretname, then it will print the letter
     if letter_in_fruit in secretname:
       print(letter_in_fruit)
-  # else you lose a chance if it isn't one of the letters
+
+  # else, you lose a chance if it isn't one of the letters
     else:
       chances -= 1
       print("sorry, that is not one of the letters in the name. you have "+str(chances)+" more chances. ")
@@ -68,6 +67,7 @@ if category ==1:
 
     if len(secretname)==len(guesses):
       break
+
     if chances==0:
       break
 

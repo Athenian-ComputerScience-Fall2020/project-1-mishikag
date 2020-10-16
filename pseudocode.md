@@ -1,6 +1,3 @@
-# Pseudocode for this program
-(this can be in a flowchart, using bullet points, inserting a picture, etc)
-
 * Importing a module: random
 
 * Define the function introduction
