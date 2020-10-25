@@ -40,7 +40,7 @@ if category ==1:
   # this prints the dashes for the number of letter in secretname everytime you guess, and if you get letters correct, it replaces the dash with a letter
   progress = ""
   for letter in secretname:
-    progress = "_ " + progress
+    progress = "_ " + progressw
     print("_ ")
 
   #this tells you to start guessing
